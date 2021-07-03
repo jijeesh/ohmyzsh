@@ -13,13 +13,20 @@ local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 local rvm_ruby='$(ruby_prompt_info)'
 local venv_prompt='$(virtualenv_prompt_info)'
-
+local kubectl_context='$(kubect_prompt_info)'
+# local kubectl_context='%{$fg[red]%}‹$(kubectl config current-context)'
+# local kgnc='%{$fg[green]%} $(kubectl config view --minify --output 'jsonpath={..namespace}')› %{$reset_color%}'
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
+# echo ZSH_THEME_KUBECTL_PROMPT_PREFIX="%{$fg[red]%}‹"
+# ZSH_THEME_KGNC_PROMPT_SUFFIX="› %{$reset_color%}"
+kube_prompt='%{$terminfo[bold]$fg[green]%}K8%B${user_symbol}%{$reset_color%}'
 
 PROMPT="╭─${user_host}${current_dir}${rvm_ruby}${git_branch}${venv_prompt}
+${kube_prompt} %B${kubectl_context}%b 
 ╰─%B${user_symbol}%b "
 RPROMPT="%B${return_code}%b"
-
+ZSH_THEME_KUBECTL_PROMPT_PREFIX="%{$fg[blue]%}‹"
+ZSH_THEME_KUBECTL_PROMPT_SUFFIX="› %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
