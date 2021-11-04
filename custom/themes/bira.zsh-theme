@@ -36,11 +36,11 @@ local venv_prompt='$(virtualenv_prompt_info)'
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
-PROMPT="╭─${user_host}${k8s_symbol}
-${current_dir}${git_branch}
+PROMPT="╭─${user_host}${k8s_symbol}${git_branch}
+${current_dir}
 ╰─%B${user_symbol}%b "
 RPROMPT="%B${return_code}%b"
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}$(gitSymbol)%{$reset_color%} %{$fg[yellow]%} "
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[green]%}$(gitSymbol)%{$reset_color%} %{$fg[yellow]%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
 ZSH_THEME_RUBY_PROMPT_PREFIX="%{$fg[red]%}‹"
