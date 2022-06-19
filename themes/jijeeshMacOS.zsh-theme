@@ -25,8 +25,8 @@ else
     local user_host='%{$terminfo[bold]$fg[green]%}%n %{$reset_color%}'
     local user_symbol='$'
 fi
-KUBE="~/.kube"
-if [ -d "$KUBE" ]; then
+
+if [ -d ~/.kube ]; then
 local k8s_symbol='%{$fg_bold[blue]%}$(k8sSymbol) $(kubect_prompt_info) %{$reset_color%}'
 fi
 local current_dir='%{$fg_bold[white]%}$(toon)%  %{$terminfo[bold]$fg_bold[blue]%}%~ %{$reset_color%}'
