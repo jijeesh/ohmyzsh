@@ -1,4 +1,13 @@
-# ZSH Theme - Preview: https://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
+# vim:ft=zsh ts=2 sw=2 sts=2
+#
+# jijeeshMacOS Theme - https://github.com/jijeesh/kubectl-aliases/blob/master/README.md
+# A Powerline-inspired theme for ZSH
+#
+# # README
+#
+# In order for this theme to render correctly, you will need a
+# [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts).
+
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 function toon {
@@ -29,7 +38,7 @@ fi
 if [ -d ~/.kube ]; then
 local k8s_symbol='%{$fg_bold[blue]%}$(k8sSymbol) $(kubect_prompt_info) %{$reset_color%}'
 fi
-local current_dir='%{$fg_bold[white]%}$(toon)%  %{$terminfo[bold]$fg_bold[yellow]%}%~ %{$reset_color%}'
+local current_dir='%{$fg_bold[red]%}$(toon)%  %{$terminfo[bold]$fg_bold[yellow]%}%~ %{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 
 
