@@ -27,9 +27,9 @@ else
 fi
 KUBE="~/.kube"
 if [ -d "$KUBE" ]; then
-local k8s_symbol='%{$fg[blue]%}$(k8sSymbol) $(kubect_prompt_info) %{$reset_color%}'
+local k8s_symbol='%{$fg_bold[blue]%}$(k8sSymbol) $(kubect_prompt_info) %{$reset_color%}'
 fi
-local current_dir='%{$fg[white]%}$(toon)%  %{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
+local current_dir='%{$fg_bold[white]%}$(toon)%  %{$terminfo[bold]$fg_bold[blue]%}%~ %{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 
 
@@ -38,6 +38,6 @@ PROMPT="╭─${user_host}${k8s_symbol}${git_branch}
 ${current_dir}
 ╰─%B${user_symbol}%b "
 RPROMPT="%B${return_code}%b"
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[green]%}$(gitSymbol)%{$reset_color%} %{$fg[yellow]%} "
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[red]%}$(gitSymbol)%{$reset_color%}%{$fg_bold[red]%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
