@@ -32,9 +32,9 @@ function gitSymbol {
 
 # Function to get Kubernetes prompt info
 function kubect_prompt_info() {
-  local kubectl_prompt="$(kubectl config current-context)"
-  local kgnc_prompt="$(kubectl config view --minify --output 'jsonpath={..namespace}')"
-  echo -n "${ZSH_THEME_KUBECTL_PROMPT_PREFIX}${kgnc_prompt}${ZSH_THEME_KUBECTL_PROMPT_SUFFIX}"
+  local kubectl_context=$(kubectl config current-context)
+  local kubectl_namespace=$(kubectl config view -o jsonpath="{.contexts[?(@.name==\"${kubectl_context}\")].context.namespace}")
+  echo -n "${ZSH_THEME_KUBECTL_PROMPT_PREFIX}${kubectl_namespace}${ZSH_THEME_KUBECTL_PROMPT_SUFFIX}"
 }
 
 # User and host prompt
