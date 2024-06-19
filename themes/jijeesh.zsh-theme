@@ -14,7 +14,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 # Function to determine system emoji
 function toon {
   case "$(uname -s)" in
-    "Darwin") echo -n "🍎" ;; # macOS
+    "Darwin") echo -n "" ;; # macOS
     "Linux") echo -n "🐧" ;;  # Linux (Ubuntu)
     *) echo -n "♔" ;;         # Default emoji for unknown OS
   esac
